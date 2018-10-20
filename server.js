@@ -6,7 +6,7 @@ app.set('view engine', 'ejs');
 app.use(express.static(__dirname + '/public'));
 app.use(bodyParser.urlencoded({extended: true}));
 const MongoClient = require('mongodb').MongoClient;
-const url = 'mongodb://user:userpwd1@ds139428.mlab.com:39428/messages';
+const url = 'mongodb://user:userpwd1@ds125058.mlab.com:25058/heroku_lm6jlxkb';
 
 var db;
 MongoClient.connect(url, (err, client) => {
@@ -16,6 +16,7 @@ MongoClient.connect(url, (err, client) => {
     console.log('listening on 3000')
   })
 })
+
 
 app.get('/', (req, res) => {
   db.collection('messages').find().toArray((err, result) => {

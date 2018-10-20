@@ -6,7 +6,8 @@ app.set('view engine', 'ejs');
 app.use(express.static(__dirname + '/public'));
 app.use(bodyParser.urlencoded({extended: true}));
 const MongoClient = require('mongodb').MongoClient;
-const url = 'mongodb://user:userpwd1@ds125058.mlab.com:25058/heroku_lm6jlxkb';
+//const url = 'mongodb://user:userpwd1@ds125058.mlab.com:25058/heroku_lm6jlxkb';
+var url = process.env.MONGOLAB_URI;
 
 var db;
 MongoClient.connect(url, (err, client) => {

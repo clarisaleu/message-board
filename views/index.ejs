@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Clarisa Leu</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+<div class="form-group form-main">
+<div id="form-div">
+<div class="listed">
+  <p class="title">Say something... :)</p>
+  <ul class="messages text sortable" id="sortable-list">
+  <% for(var i=0; i< messages.length; i++) {%>
+  
+    <li class="messages text">
+      <span><%= messages[i].body %></span>
+    </li>
+  <% } %>
+  </ul>
+  </listed>
+
+  <form action="/messages" method="POST" >
+    <input type="text" id="dynamic-label-input" placeholder="Short & Sweet Message Goes Here..." name="body" class="validate[required,length[6,300]] feedback-input">
+    <div class="submit">
+    <input type="submit" value="SEND" id="button-blue"/>      
+    <div class="ease"></div>
+
+  </form>
+  </div>
+</body>
+</html>
